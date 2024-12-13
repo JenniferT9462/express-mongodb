@@ -5,13 +5,13 @@ const app = express();
 const port = 3000;
 
 require('dotenv').config()
-const atlasUrl = process.env.ATLAS_URL;
+const atlasUri = process.env.ATLAS_URI;
 // Middleware to parse JSON bodies
 app.use(express.json());
 
 // Connect to MongoDB
 mongoose
-  .connect(atlasUrl, {
+  .connect(atlasUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
